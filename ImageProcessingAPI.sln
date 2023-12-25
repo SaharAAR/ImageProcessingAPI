@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "ImageProcessingAPI", "ImageProcessingAPI\ImageProcessingAPI.esproj", "{4D84C57C-3350-40F8-9909-114CD2E7C0F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D84C57C-3350-40F8-9909-114CD2E7C0F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D84C57C-3350-40F8-9909-114CD2E7C0F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D84C57C-3350-40F8-9909-114CD2E7C0F1}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4D84C57C-3350-40F8-9909-114CD2E7C0F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D84C57C-3350-40F8-9909-114CD2E7C0F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D84C57C-3350-40F8-9909-114CD2E7C0F1}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B25E82CB-5498-40E3-B871-510C9CAC1C33}
+	EndGlobalSection
+EndGlobal
