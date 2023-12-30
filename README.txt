@@ -15,6 +15,12 @@ npm install
 `bash
 npm start
 
+- To run tests using Jasmine
+
+`bash
+npm test 
+
+
 
 ## Endpoints --------------
 

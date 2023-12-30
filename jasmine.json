@@ -1,11 +1,29 @@
 {
-  "spec_dir": "dist/spec",
+  "spec_dir": "../src/tests", // \dist\tests\imageProcessor.spec.js
   "spec_files": [
+    // "imageProcessor.spec.js",
+    // "imageProcessor.spec.ts",
     "**/*[sS]pec.js"
   ],
   "helpers": [
     "helpers/**/*.js"
   ],
   "stopSpecOnExpectationFailure": false,
-  "random": true
+  "random": true,
+  "stopOnSpecFailure": false,
+  "failFast": false,
+  "reporters": [
+    {
+      "name": "customReporter"
+    },
+    {
+      "name": "jasmine-spec-reporter",
+      "options": {
+        "displayStacktrace": "pretty",
+        "displayPendingSummary": true,
+        "displayPendingSpec": true,
+        "displaySpecDuration": true
+      }
+    }
+  ]
 }

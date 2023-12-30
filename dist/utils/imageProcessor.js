@@ -18,7 +18,7 @@ function resizeImage(inputPath, outputPath, width, height) {
     return __awaiter(this, void 0, void 0, function* () {
         yield (0, sharp_1.default)(inputPath).resize({ width, height }).toFile(outputPath);
     });
-}
+} //resize image funcion
 exports.resizeImage = resizeImage;
 function checkCachedImage(outputPath) {
     return __awaiter(this, void 0, void 0, function* () {
@@ -30,5 +30,5 @@ function checkCachedImage(outputPath) {
             return false;
         }
     });
-}
+} // check cached image function
 exports.checkCachedImage = checkCachedImage;

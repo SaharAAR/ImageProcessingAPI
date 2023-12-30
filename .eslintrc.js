@@ -2,7 +2,8 @@ module.exports = {
     "env": {
         "browser": true,
         "es2021": true,
-        "node": true
+        "node": true,
+        "jasmine": true
     },
     "extends": [
         "eslint:recommended",
@@ -11,7 +12,9 @@ module.exports = {
     "overrides": [
         {
             "env": {
-                "node": true
+                "browser": true,
+                "node": true,
+                "jasmine": true
             },
             "files": [
                 ".eslintrc.{js,cjs}"
