@@ -20,6 +20,26 @@ npm start
 `bash
 npm test 
 
+- To run ESLint to check TypeScript files for linting errors.
+
+`bash
+npm run lint 
+
+- To run ESLint and attempts to fix linting errors automatically.
+
+`bash
+npm run lint:fix
+
+- Checks TypeScript files for formatting issues using Prettier.
+
+`bash
+npm run format
+
+
+- Formats TypeScript files using Prettier and fixes any issues.
+
+`bash
+npm run format:fix
 
 
 ## Endpoints --------------

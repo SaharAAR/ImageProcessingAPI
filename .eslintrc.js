@@ -6,8 +6,10 @@ module.exports = {
         "jasmine": true
     },
     "extends": [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended"
+        'eslint:recommended',
+        'plugin:@typescript-eslint/recommended',
+        'prettier',
+        'plugin:prettier/recommended',
     ],
     "overrides": [
         {
@@ -30,7 +32,8 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        "@typescript-eslint"
+        '@typescript-eslint',
+        'prettier'
     ],
     "rules": {
     }

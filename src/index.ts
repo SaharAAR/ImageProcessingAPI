@@ -1,42 +1,54 @@
-import express from 'express';
-/*import imageRoutes from './routes/imageRoutes';*/
+import express, { Request, Response } from 'express';
 import sharp from 'sharp';
 import path from 'path';
 
 const app = express();
 
-// Serve static files (images)
+// serve static files (images)
 app.use('/images', express.static(path.join(__dirname, '..', 'assets')));
 
-// Endpoint for image resizing
-app.get('/images', async (req, res) => {
-    const { filename, width, height } = req.query;
+// endpoint for image resizing
+app.get('/images', async (req: Request, res: Response): Promise<void> => {
+  const { filename, width, height } = req.query as {
+    filename: string;
+    width: string;
+    height: string;
+  };
 
-    if (!filename || !width || !height) {
-        return res.status(400).send('Missing parameters');
-    }
+  if (!filename || !width || !height) {
+    res.status(400).send('Missing parameters');
+    return;
+  }
 
-    // Define paths for original and processed images
-    const originalImagePath = path.join(__dirname, '..', 'assets', 'full', `${filename}.jpg`);
-    const thumbImagePath = path.join(__dirname, '..', 'assets', 'thumb', `${filename}_${width}_${height}.jpg`);
+  // paths for original & processed images
+  const originalImagePath = path.join(__dirname, '..', 'assets', 'full', `${filename}.jpg`);
+  const thumbImagePath = path.join(
+    __dirname,
+    '..',
+    'assets',
+    'thumb',
+    `${filename}_${width}_${height}.jpg`
+  );
 
-    try {
-        // Process the image using Sharp
-        await sharp(originalImagePath)
-            .resize(Number(width), Number(height))
-            .toFile(thumbImagePath);
+  try {
+    // process image using Sharp
+    await sharp(originalImagePath).resize(Number(width), Number(height)).toFile(thumbImagePath);
 
-        // Serve the processed image
-        res.sendFile(thumbImagePath);
-    } catch (err) {
-        console.error(err); // Log the error to the console for debugging
+    // return processed image
+    res.sendFile(thumbImagePath, {}, (err) => {
+      if (err) {
+        console.error(err); // log the error to the console for debugging
         res.status(500).send('Internal Server Error');
-    }
+      }
+    });
+  } catch (err) {
+    console.error(err); // log the error to the console for debugging
+    res.status(500).send('Internal Server Error');
+  }
 });
 
-
-// Start the server
+// start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
