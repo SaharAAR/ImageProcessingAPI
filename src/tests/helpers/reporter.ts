@@ -10,6 +10,24 @@ class CustomReporter extends DisplayProcessor {
   public displaySuccessfulSpec(spec: CustomReporterResult): string {
     return `Custom Success: ${spec.fullName}`;
   }
+
+  public displaySpecErrorMessages(spec: CustomReporterResult): string {
+    let messages = '';
+    for (const expectation of spec.failedExpectations) {
+      messages += `Failure: ${expectation.message}\n`;
+      messages += `${expectation.stack}\n`;
+    }
+    return messages;
+  }
+
+  public displaySummaryErrorMessages(result: CustomReporterResult): string {
+    let messages = '';
+    for (const expectation of result.failedExpectations) {
+      messages += `Global Failure: ${expectation.message}\n`;
+      messages += `${expectation.stack}\n`;
+    }
+    return messages;
+  }
 }
 
 jasmine.getEnv().clearReporters();

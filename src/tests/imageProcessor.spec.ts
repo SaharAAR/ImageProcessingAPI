@@ -1,5 +1,6 @@
 import sharp from 'sharp';
-import { resizeImage, checkCachedImage } from './../../src/utils/imageProcessor';
+//import { resizeImage, checkCachedImage } from './../../src/utils/imageProcessor';
+import { resizeImage, checkCachedImage } from '../utils/imageProcessor';
 
 describe('Image Processor', () => {
   describe('resizeImage', () => {
